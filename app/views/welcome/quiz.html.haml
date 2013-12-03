@@ -20,4 +20,21 @@
       $('body').append($numberDiv);
 
     });
+
+
+    function getNumbers(num) {
+      return $.ajax({
+        url: '/randNum/' + num,
+        type: 'GET'
+      });
+    }
+
+
+    $('button[name"random ajax numbers"]').on('click', function(e) {
+      var numRand = $('input[name="numbers"]').val();
+
+      getNumbers(numRand).done(function(data) {
+        $('input[name="numbers"]').val(data.data);
+      });
+    });
   });
