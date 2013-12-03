@@ -2,7 +2,7 @@
 
 #quiz
   %input{:type=>'text', :name =>'numbers'}
-  %button{:name =>'sort'}
+  %button#sort{:name =>'sort'}
 
 :javascript
   $(function() {
@@ -15,7 +15,7 @@
       $('input[name="numbers"]').remove();
 
       var $numberDiv = $('<div>');
-      $numberDiv.text(numbers.sort(function(a,b){return a-b}));
+      $numberDiv.text(numbers.sort(function(a,b){return a-b}).join(', '));
 
       $('body').append($numberDiv);
 
