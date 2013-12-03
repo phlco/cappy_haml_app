@@ -72,7 +72,7 @@ describe "The Quiz" do
     end
 
     it "the numbers input is filled with random numbers" do
-      expect('numbers').value.split(', ').count.to eq(4)
+      expect(find_field('numbers').value.split(',').count).to eq(4)
     end
 
   end

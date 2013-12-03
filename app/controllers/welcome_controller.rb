@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
   end
 
   def rand
-    numRand = params[:id]
+    numRand = params[:id].to_i
 
     randNums = numRand.times.map { Random.rand(11) }
 
