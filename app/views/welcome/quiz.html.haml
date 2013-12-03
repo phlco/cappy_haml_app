@@ -1,0 +1,24 @@
+%h1 Sorting Quiz
+
+#quiz
+  %input{:name=>"numbers"}
+  %button sort
+
+#sorted-numbers
+
+:javascript
+  $(document).ready(function() {
+    $("button").on("click", clickButton);
+  });
+
+  function clickButton(e) {
+    $('input').attr("disabled", "disabled");
+    $('button').attr("disabled", "disabled");
+    var numbers = $('input').val().split(',');
+    var sortedNumbers = numbers.sort( function(a,b) { return a - b } );
+    $('#sorted-numbers').text(sortedNumbers);
+  };
+
+/ var myarray=[25, 8, 7, 41]
+/ myarray.sort( function(a,b) { return b - a; } );
+// 7 8 25 41
