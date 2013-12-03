@@ -7,4 +7,15 @@ $(document).ready(function() {
     $('#quiz').remove();
     event.preventDefault();
   })
+  $('#ajax').on('click', function() {
+    var input = $('input').val();
+    input = parseInt(input);
+    $.ajax({
+      type: "GET",
+      url: "/random?number="+input,
+    }).done(function(answer) {
+      $('.answer').text(answer);
+      $('#quiz').remove();
+    });
+  })
 })

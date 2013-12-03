@@ -64,15 +64,16 @@ describe "The Quiz" do
 
   end
 
+  describe 'when i click the "random ajax number" button', :js=>true do
+    before(:each) do
+      visit '/quiz'
+      within("#quiz") { fill_in 'numbers', with: "5" }
+      click_button "Random Ajax Numbers"
+    end
+
+    it 'returns and array of numbers with length of input' do
+      expect(page.text).to match(/\d,\s\d,\s\d,\s\d,\s\d/)
+    end
+  end
+
 end
-
-# More!
-
-# In order to incorporate some Ruby and Ajax...
-# Given that you've completed all the above
-# And if you enter a number into the input numbers field
-# When you click on "Random Ajax Numbers"
-# Then you should make an ajax call to your server
-# And receive back a random array of numbers
-# And the length of that array should be equal to the number you entered in the input field
-# And those numbers should appear in the numbers input field
