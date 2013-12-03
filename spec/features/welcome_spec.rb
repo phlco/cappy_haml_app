@@ -32,7 +32,6 @@ describe "HAML Practice" do
 end
 
 describe "The Quiz" do
-
   it "has a link to take us to the Sorting Quiz" do
     visit '/'
     click_link "sorting quiz"
@@ -44,6 +43,12 @@ describe "The Quiz" do
     visit '/quiz'
     within("#quiz") { expect(page).to have_css("input[name='numbers']") }
     within("#quiz") { expect(page).to have_css('button') }
+  end
+
+  it "should have a button to get a random array if the text input has value" do
+    visit '/quiz'
+    within("#quiz") { fill_in 'numbers', with: "1, 2, 3" }
+    expect(page).to have_button "Random Ajax Numbers"
   end
 
   describe "when i click the 'sort' button", js: true do
@@ -64,7 +69,18 @@ describe "The Quiz" do
 
   end
 
+  describe "when i click the Random Numbers button", js: true do
+    it "displays an array the same length as the sum of the numbers entered into text field" do
+      visit '/quiz'
+      within("#quiz") { fill_in 'numbers', with: "1, 2" }
+      click_button "Random Ajax Numbers"
+      answer = page.find('.show').text.split(', ')
+      expect(answer.length).to eq(3)
+    end
+  end
+
 end
+
 
 # More!
 
