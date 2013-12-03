@@ -4,6 +4,8 @@ CappyHamlApp::Application.routes.draw do
   get '/quiz' => 'welcome#quiz'
   get '/rando' => 'welcome#rando'
 
+  get '/random/:amount' => 'welcome#random'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

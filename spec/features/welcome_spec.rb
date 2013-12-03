@@ -64,32 +64,24 @@ describe "The Quiz" do
 
   end
 
-end
 
-describe "More" do
-  it "has a link to take us to the more page" do
-    visit '/'
-    click_link "random numbers"
-    expect(current_path).to eq('/rando')
-    expect(page).to have_content "random numbers"
-    expect(page).to have_css('#rando')
-  end
-  it "has a number input and random button" do
-    visit '/rando'
-    expect(page).to have_css("input#amount")
-    expect(page).to have_css("button")
-  end
-  describe "when i click the button" do
-    before(:each) do
-      visit '/rando'
-      within('#rando') {
-        fill_in "amount", with: "8"
-        click_button "random numbers please"
-      }
+  describe "More" do
+    it "has a number input and random button" do
+      expect(page).to have_css("input#amount")
+      expect(page).to have_css("button")
     end
+    describe "when i click the button" do
+      before(:each) do
+        visit '/quiz'
+        within('#quiz') {
+          fill_in "numbers", with: "8"
+          click_button "random numbers please"
+        }
+      end
 
-    it "returns an array of random numbers" do
-      expect("numbers").not_to be_empty
+      it "returns an array of random numbers" do
+        expect("numbers").not_to be_empty
+      end
     end
   end
 end

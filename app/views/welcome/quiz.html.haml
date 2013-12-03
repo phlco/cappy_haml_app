@@ -2,10 +2,11 @@
   Sorting Quiz
 #quiz
   %input#numbers{name: 'numbers'}
-  %button sort
+  %button#sort sort
+  %button#random random numbers please
 
 :javascript
-  $('button').on("click", function(){
+  $('#sort').on("click", function(){
   var numString = $('#numbers').val();
   $('#numbers').remove();
   $('button').remove();
@@ -19,4 +20,16 @@
   var sortedString = numericalArray.join(", ");
   console.log(sortedString);
   $('#quiz').text(sortedString);
+  });
+
+  $('#random').on("click", function(){
+    var value = $('#numbers').val();
+    $.ajax({
+    url: "/random/" + value ,
+    type: "GET",
+    dataType: "json"
+    }).done(function(data){
+      console.log(data);
+      $('#numbers').val(data);
+    });
   })
