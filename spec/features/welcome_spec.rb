@@ -14,21 +14,21 @@ require 'spec_helper'
 #   ""\ \___//
 #      `w   "
 describe "HAML Practice" do
-  # it "is white space sensitive and doesn't have closing tags" do
-  #   visit '/'
-  #   click_link "haml practice" #done
-  #   expect(current_path).to eq('/haml') #done
-  #   within('h1#haml-time') { expect(page).to have_content("HAML Time")} #done
-  #   expect(page).to have_css('ul li a.banana#ripe') #passing
-  #   expect(page).to have_css("nav ul li a[href='/quiz']") #passing
-  #   expect(page).to have_css('section article.one') #passing
-  #   expect(page).to have_css('table thead tr.first') #passing
-  #   within('table') { expect(page).to have_content("hearts moons stars")} #passing
-  #   expect(page).to have_css('form input[type=checkbox]') #passing
-  #   expect(page).to have_css('label[for=fave_cereal]') #passing
-  #   expect(page).to have_css('input[type=select]#fave_cereal') #passing
-  #   expect(page).to have_css('footer') #passing
-  # end
+  it "is white space sensitive and doesn't have closing tags" do
+    visit '/'
+    click_link "haml practice" #done
+    expect(current_path).to eq('/haml') #done
+    within('h1#haml-time') { expect(page).to have_content("HAML Time")} #done
+    expect(page).to have_css('ul li a.banana#ripe') #passing
+    expect(page).to have_css("nav ul li a[href='/quiz']") #passing
+    expect(page).to have_css('section article.one') #passing
+    expect(page).to have_css('table thead tr.first') #passing
+    within('table') { expect(page).to have_content("hearts moons stars")} #passing
+    expect(page).to have_css('form input[type=checkbox]') #passing
+    expect(page).to have_css('label[for=fave_cereal]') #passing
+    expect(page).to have_css('input[type=select]#fave_cereal') #passing
+    expect(page).to have_css('footer') #passing
+  end
 end
 
 describe "The Quiz" do
@@ -53,14 +53,14 @@ describe "The Quiz" do
       click_button "sort"
     end
 
-    # it "removes the input" do
-    #   expect(page.has_no_field? 'numbers').to be true
-    #   expect(page.has_no_button? 'sort').to be true
-    # end
+    it "removes the input" do
+      expect(page.has_no_field? 'numbers').to be true
+      expect(page.has_no_button? 'sort').to be true
+    end
 
-    # it "displays the numbers in ascending order" do
-    #   expect(page).to have_content "-1, 1, 2, 4, 8, 20"
-    # end
+    it "displays the numbers in ascending order" do
+      expect(page).to have_content "-1, 1, 2, 4, 8, 20"
+    end
 
   end
 

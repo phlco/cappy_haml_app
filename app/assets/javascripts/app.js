@@ -1,7 +1,10 @@
 function sortNum(e){
   var numbers = $('#numbers').val().split(',');
-  numbers = numbers.sort(function(a,b){ return b < a });
-  $('#numbers').val(numbers.join());
+  numbers = numbers.sort(function(a,b){ return a-b });
+  debugger;
+  $('#answer').text(numbers.join());
+  $('#numbers').remove();
+  $("#sort").remove();
 }
 
 
