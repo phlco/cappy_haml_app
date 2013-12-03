@@ -3,4 +3,6 @@ class WelcomeController < ApplicationController
   end
   def haml
   end
+  def quiz
+  end
 end
