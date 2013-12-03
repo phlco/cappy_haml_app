@@ -67,8 +67,8 @@ describe "The Quiz" do
 
   describe "More" do
     it "has a number input and random button" do
-      expect(page).to have_css("input#amount")
-      expect(page).to have_css("button")
+      visit '/quiz'
+      expect(page).to have_css("button#random")
     end
     describe "when i click the button" do
       before(:each) do
@@ -78,7 +78,9 @@ describe "The Quiz" do
           click_button "random numbers please"
         }
       end
+      it "makes an ajax request", :js => true do
 
+      end
       it "returns an array of random numbers" do
         expect("numbers").not_to be_empty
       end
