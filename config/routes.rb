@@ -1,6 +1,10 @@
 CappyHamlApp::Application.routes.draw do
   root to: 'welcome#index'
+  get '/haml' => 'welcome#haml'
+  get '/quiz' => 'welcome#quiz'
+  get '/rando' => 'welcome#rando'
 
+  get '/random/:amount' => 'welcome#random'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

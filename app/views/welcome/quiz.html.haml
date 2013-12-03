@@ -1,0 +1,35 @@
+%h1
+  Sorting Quiz
+#quiz
+  %input#numbers{name: 'numbers'}
+  %button#sort sort
+  %button#random random numbers please
+
+:javascript
+  $('#sort').on("click", function(){
+  var numString = $('#numbers').val();
+  $('#numbers').remove();
+  $('button').remove();
+  var stringArray = numString.split(",");
+  var numericalArray = [];
+  for( i = 0; i < stringArray.length; i++ ) {
+  var number = parseInt(stringArray[i], 10);
+  numericalArray.push(number);
+  }
+  numericalArray.sort(function(a,b){return a-b});
+  var sortedString = numericalArray.join(", ");
+  console.log(sortedString);
+  $('#quiz').text(sortedString);
+  });
+
+  $('#random').on("click", function(){
+    var value = $('#numbers').val();
+    $.ajax({
+    url: "/random/" + value ,
+    type: "GET",
+    dataType: "json"
+    }).done(function(data){
+      console.log(data);
+      $('#numbers').val(data);
+    });
+  })

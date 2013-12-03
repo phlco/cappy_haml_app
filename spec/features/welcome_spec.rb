@@ -64,6 +64,28 @@ describe "The Quiz" do
 
   end
 
+
+  describe "More" do
+    it "has a number input and random button" do
+      visit '/quiz'
+      expect(page).to have_css("button#random")
+    end
+    describe "when i click the button" do
+      before(:each) do
+        visit '/quiz'
+        within('#quiz') {
+          fill_in "numbers", with: "8"
+          click_button "random numbers please"
+        }
+      end
+      it "makes an ajax request", :js => true do
+
+      end
+      it "returns an array of random numbers" do
+        expect("numbers").not_to be_empty
+      end
+    end
+  end
 end
 
 # More!
