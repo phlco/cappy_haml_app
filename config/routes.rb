@@ -3,6 +3,8 @@ CappyHamlApp::Application.routes.draw do
 
   get '/haml' => 'welcome#haml'
 
+  get '/quiz' => 'welcome#quiz'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
