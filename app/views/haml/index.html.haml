@@ -1,0 +1,27 @@
+%h1#haml-time HAML Time
+
+%ul
+	%li
+		%a.banana#ripe ripe banana
+
+%nav
+	%ul
+		%li
+			%a{href: '/quiz'} quiz link
+
+%section
+	%article.one article
+
+%table
+	%thead
+		%tr.first
+			%td hearts
+			%td moons
+			%td stars
+
+= form_tag do
+	= check_box_tag "fave"
+	= label_tag "fave_cereal"
+	= select_tag "fave_cereal"
+
+%footer footer

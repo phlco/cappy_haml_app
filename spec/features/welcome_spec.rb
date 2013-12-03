@@ -13,23 +13,24 @@ require 'spec_helper'
 #  \ (  \_Y_/\          # https://gist.github.com/zhengjia/428105
 #   ""\ \___//
 #      `w   "
-describe "HAML Practice" do
-  it "is white space sensitive and doesn't have closing tags" do
-    visit '/'
-    click_link "haml practice"
-    expect(current_path).to eq('/haml')
-    within('h1#haml-time') { expect(page).to have_content("HAML Time")}
-    expect(page).to have_css('ul li a.banana#ripe')
-    expect(page).to have_css("nav ul li a[href='/quiz']")
-    expect(page).to have_css('section article.one')
-    expect(page).to have_css('table thead tr.first')
-    within('table') { expect(page).to have_content("hearts moons stars")}
-    expect(page).to have_css('form input[type=checkbox]')
-    expect(page).to have_css('label[for=fave_cereal]')
-    expect(page).to have_css('input[type=select]#fave_cereal')
-    expect(page).to have_css('footer')
-  end
-end
+
+# describe "HAML Practice" do
+#   it "is white space sensitive and doesn't have closing tags" do
+#     visit '/'
+#     click_link "haml practice"
+#     expect(current_path).to eq('/haml')
+#     within('h1#haml-time') { expect(page).to have_content("HAML Time")}
+#     expect(page).to have_css('ul li a.banana#ripe')
+#     expect(page).to have_css("nav ul li a[href='/quiz']")
+#     expect(page).to have_css('section article.one')
+#     expect(page).to have_css('table thead tr.first')
+#     within('table') { expect(page).to have_content("hearts moons stars")}
+#     expect(page).to have_css('form input[type=checkbox]')
+#     expect(page).to have_css('label[for=fave_cereal]')
+#     expect(page).to have_css('select#fave_cereal')
+#     expect(page).to have_css('footer')
+#   end
+# end
 
 describe "The Quiz" do
 
