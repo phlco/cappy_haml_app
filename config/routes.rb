@@ -5,7 +5,7 @@ CappyHamlApp::Application.routes.draw do
 
   get '/quiz' => 'welcome#quiz'
 
-  post '/array' => 'welcome#array'
+  get '/array' => 'welcome#array'
 
 
   # The priority is based upon order of creation:

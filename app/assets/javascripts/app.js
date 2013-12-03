@@ -35,7 +35,7 @@ $(function(){
 function getArray(data){
   return $.ajax({
     url: '/array',
-    type: 'post',
+    type: 'get',
     dataType: 'json',
     data: { array: data }
   });
