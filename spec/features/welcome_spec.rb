@@ -26,7 +26,8 @@ describe "HAML Practice" do
     within('table') { expect(page).to have_content("hearts moons stars")}
     expect(page).to have_css('form input[type=checkbox]')
     expect(page).to have_css('label[for=fave_cereal]')
-    expect(page).to have_css('input[type=select]#fave_cereal')
+    # expect(page).to have_css('input[type=select]#fave_cereal')
+    expect(page).to have_css('select#fave_cereal')
     expect(page).to have_css('footer')
   end
 end

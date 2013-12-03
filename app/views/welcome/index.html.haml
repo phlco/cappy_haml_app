@@ -1,24 +1,28 @@
-%ul
-  %li
-    %a{href: "/home"} html
-  %li#css css
-  %li{id: 'javascript'} javascript
-  %li.backbone backbone
-  %li{class: 'jquery'} jquery
-  %li haml
+%a{href: "/haml"} haml practice
+%br
+%a{href: "/quiz"} sorting quiz
 
-- @love_of_grapes = true
-- if @love_of_grapes
-  .grapes.really.love.them#trueluv I love grapes
-- else
-  .no_grapes I hate grates
+/ %ul
+/   %li
+/     %a{href: "/home"} html
+/   %li#css css
+/   %li{id: 'javascript'} javascript
+/   %li.backbone backbone
+/   %li{class: 'jquery'} jquery
+/   %li haml
 
-  .newline i'm always here
+/ - @love_of_grapes = true
+/ - if @love_of_grapes
+/   .grapes.really.love.them#trueluv I love grapes
+/ - else
+/   .no_grapes I hate grates
 
-:javascript
-  $(document).ready(function(){
-    alert('hi');
-  });
+/   .newline i'm always here
 
-%script
-  %p {{hi}}
+/ :javascript
+/   $(document).ready(function(){
+/     alert('hi');
+/   });
+
+/ %script
+/   %p {{hi}}
