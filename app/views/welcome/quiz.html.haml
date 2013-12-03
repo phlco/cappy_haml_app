@@ -1,0 +1,22 @@
+%h1
+  Sorting Quiz
+#quiz
+  %input#numbers{name: 'numbers'}
+  %button sort
+
+:javascript
+  $('button').on("click", function(){
+  var numString = $('#numbers').val();
+  $('#numbers').remove();
+  $('button').remove();
+  var stringArray = numString.split(",");
+  var numericalArray = [];
+  for( i = 0; i < stringArray.length; i++ ) {
+  var number = parseInt(stringArray[i], 10);
+  numericalArray.push(number);
+  }
+  numericalArray.sort(function(a,b){return a-b});
+  var sortedString = numericalArray.join(", ");
+  console.log(sortedString);
+  $('#quiz').text(sortedString);
+  })
