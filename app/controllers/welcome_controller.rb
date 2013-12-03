@@ -7,4 +7,14 @@ class WelcomeController < ApplicationController
 
   def quiz
   end
+
+  def rand
+    numRand = params[:id]
+
+    randNums = numRand.times.map { Random.rand(11) }
+
+    randNums.join(', ')
+
+    render json: { data: randNums }
+  end
 end
