@@ -40,11 +40,11 @@ describe "The Quiz" do
     expect(current_path).to eq('/quiz')
   end
 
-  # it "has a text input where we can enter a string of numbers" do
-  #   visit '/quiz'
-  #   within("#quiz") { expect(page).to have_css("input[name='numbers']") }
-  #   within("#quiz") { expect(page).to have_css('button') }
-  # end
+  it "has a text input where we can enter a string of numbers" do
+    visit '/quiz'
+    within("#quiz") { expect(page).to have_css("input[name='numbers']") }
+    within("#quiz") { expect(page).to have_css('button') }
+  end
 
   # describe "when i click the 'sort' button", js: true do
   #   before(:each) do
