@@ -39,7 +39,7 @@ gem 'jquery-rails'
 
 group :development, :test do
   gem "rspec-rails"
-  gem "guard-rspec"
+  gem 'guard-rspec', require: false
   gem "capybara"
   gem "database_cleaner"
   gem "selenium-webdriver"
@@ -54,7 +54,7 @@ group :development do
   gem "binding_of_caller"
   gem "meta_request"
   gem "rails-erd"
-  gem "better_errors"
+  # gem "better_errors"
   gem "terminal-notifier-guard"
 end
 
