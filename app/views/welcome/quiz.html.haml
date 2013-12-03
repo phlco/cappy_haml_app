@@ -1,0 +1,15 @@
+%h1 Sorting Quiz
+
+#quiz
+  %input{:name=>"numbers"}
+  %button sort
+
+:javascript
+  $(document).ready(function() {
+    $("button").on("click", clickButton);
+  });
+
+  function clickButton(e) {
+    $('input').attr("disabled", "disabled");
+    $('button').attr("disabled", "disabled");
+  };
