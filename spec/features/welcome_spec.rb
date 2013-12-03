@@ -31,14 +31,14 @@ describe "HAML Practice" do
   # end
 end
 
-# describe "The Quiz" do
+describe "The Quiz" do
 
-#   it "has a link to take us to the Sorting Quiz" do
-#     visit '/'
-#     click_link "sorting quiz"
-#     expect(page).to have_content "Sorting Quiz"
-#     expect(current_path).to eq('/quiz')
-#   end
+  it "has a link to take us to the Sorting Quiz" do
+    visit '/'
+    click_link "sorting quiz"
+    expect(page).to have_content "Sorting Quiz"
+    expect(current_path).to eq('/quiz')
+  end
 
 #   it "has a text input where we can enter a string of numbers" do
 #     visit '/quiz'
@@ -62,9 +62,9 @@ end
 #       expect(page).to have_content "-1, 1, 2, 4, 8, 20"
 #     end
 
-#   end
+  end
 
-# end
+end
 
 # More!
 
