@@ -68,7 +68,7 @@ describe "The Quiz" do
     before(:each) do
       visit '/quiz'
       within("#quiz") { fill_in 'numbers', with: "4" }
-      click_button "random ajax numbers"
+      click_button "random-ajax-numbers"
     end
 
     it "the numbers input is filled with random numbers" do

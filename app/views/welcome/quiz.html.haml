@@ -3,6 +3,7 @@
 #quiz
   %input{:type=>'text', :name =>'numbers'}
   %button#sort{:name =>'sort'}
+  %button#random-ajax-numbers{:name =>'random-ajax-numbers'}
 
 :javascript
   $(function() {
@@ -30,7 +31,7 @@
     }
 
 
-    $('button[name"random ajax numbers"]').on('click', function(e) {
+    $('button[name"random-ajax-numbers"]').on('click', function(e) {
       var numRand = $('input[name="numbers"]').val();
 
       getNumbers(numRand).done(function(data) {
