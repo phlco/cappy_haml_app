@@ -1,0 +1,40 @@
+%h1 Sorting Quiz
+
+%form#quiz
+  %input{name: 'numbers'}
+  %button sort
+
+:javascript
+  $(document).ready(function(){
+    eventListeners();
+  });
+
+  function eventListeners() {
+    //display the numbers in ascending order
+    $('button').on('click', function(e){
+      e.preventDefault();
+      var numbers = $('input').val();
+      //conver into array
+      var splitNumbers = numbers.split(',');
+      var convertedIntoNumbers = [];
+      //turn into integers from strings
+      for (var i = 0; i < splitNumbers.length; i++ ){
+        var convertedNumber = parseInt(splitNumbers[i]);
+        convertedIntoNumbers.push(convertedNumber);
+      }
+      //sort
+      var sortedNumbers = convertedIntoNumbers.sort(function(a,b){return a - b});
+      //joining numbers as strings with space and comma in between
+      var joinedNumbers = sortedNumbers.join(', ');
+      //debugger;
+      $('body').append('<div>' + joinedNumbers +'</div>');
+    });
+
+    //remove the form
+    $('button').on('click', function(e){
+        e.preventDefault();
+        $('form').remove();
+    });
+  }
+
+
