@@ -58,9 +58,9 @@ describe "The Quiz" do
       expect(page.has_no_button? 'sort').to be true
     end
 
-    # it "displays the numbers in ascending order" do
-    #   expect(page).to have_content "-1, 1, 2, 4, 8, 20"
-    # end
+    it "displays the numbers in ascending order" do
+      expect(page).to have_content "-1, 1, 2, 4, 8, 20"
+    end
 
   end
 
