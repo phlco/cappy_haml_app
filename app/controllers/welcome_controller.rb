@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
   def index
   end
 
-  def home
+  def haml
   end
 
   def quiz
