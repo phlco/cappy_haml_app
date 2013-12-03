@@ -66,6 +66,17 @@ describe "The Quiz" do
 
 end
 
+describe "More" do
+
+  it "has a link to take us to the More" do
+    visit '/'
+    click_link "more"
+    expect(page).to have_content "More"
+    expect(current_path).to eq('/more')
+  end
+
+end
+
 # More!
 
 # In order to incorporate some Ruby and Ajax...
@@ -76,3 +87,7 @@ end
 # And receive back a random array of numbers
 # And the length of that array should be equal to the number you entered in the input field
 # And those numbers should appear in the numbers input field
+
+
+
+

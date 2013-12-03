@@ -7,4 +7,8 @@ class WelcomeController < ApplicationController
 
   def quiz
   end
+
+  def more
+  end
+
 end
