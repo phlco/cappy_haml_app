@@ -32,7 +32,6 @@ describe "HAML Practice" do
 end
 
 describe "The Quiz" do
-
   it "has a link to take us to the Sorting Quiz" do
     visit '/'
     click_link "sorting quiz"
