@@ -1,0 +1,26 @@
+%h1 Sorting Quiz
+
+#quiz
+  %input{:name => "numbers"}/
+  %button#button sort
+
+:javascript
+  $(document).ready(function(){
+      $('#button').on("click", function(){
+        var nums = $('input').val().split(',');
+        var intnums = [];
+        for(var i = 0; i<nums.length; i++){
+          intnums.push(parseInt(nums[i]));
+        };
+        var sorted = intnums.sort(function(a,b){return a > b});
+        _.map(sorted, function(num){
+          return " "+num.toString;
+        })
+        console.log(sorted)
+        $('body').append(sorted.join(", "));
+
+
+        $('input').remove();
+        $('button').remove();
+      })
+  });
