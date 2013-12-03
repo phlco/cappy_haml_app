@@ -2,4 +2,27 @@
 
 %form#more
   %input{name: 'numbers'}
-  %button random number
+  %button random numbers
+
+:javascript
+  $(document).ready(function(){
+    eventListeners();
+  });
+
+  function eventListeners() {
+    $('button').on('click', function(e) {
+      e.preventDefault();
+      var numberOfNumbers = $('input').val();
+      $.ajax({
+        url: '/numbers',
+        type: 'POST',
+        data: {numberOfNumbers: numberOfNumbers}
+      })
+      .done(function(data) {
+        console.log(data);
+        var spacedOut = data.join(', ');
+        debugger;
+        $('input').val(spacedOut);
+      })
+    })
+  }

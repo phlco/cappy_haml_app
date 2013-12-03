@@ -81,6 +81,21 @@ describe "More" do
     within("#more") { expect(page).to have_css('button') }
   end
 
+  describe "when i click the 'random numbers' button", js: true do
+    before(:each) do
+      visit '/more'
+      within("#more") { fill_in 'numbers', with: "5" }
+      click_button "random numbers"
+    end
+
+    it "displays the exact number of random numbers" do
+      numbers_displayed = find_field('numbers').value
+      # account for commas and spaces
+      expect(numbers_displayed.length).to eq 5 + 9
+    end
+
+  end
+
 
 end
 
