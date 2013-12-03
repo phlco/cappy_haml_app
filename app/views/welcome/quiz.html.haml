@@ -2,4 +2,18 @@
 
 %form#quiz
   %input{name: 'numbers'}
-  %button
+  %button sort
+
+:javascript
+  $(document).ready(function(){
+    eventListeners();
+  });
+
+  function eventListeners() {
+    $('button').on('click', function(e){
+        e.preventDefault;
+        $('form').remove();
+    });
+  }
+
+
