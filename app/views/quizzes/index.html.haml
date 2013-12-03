@@ -11,10 +11,16 @@
     });
 
     function sortQuiz(){
-      var numbers = $('input').val().replace(/\,/g,'');
+      var numbers = $('input').val()
       var numberArray = numbers.split(",");
-      numberArray = numberArray.sort();
+      for(var i=0; i<numberArray.length; i++){
+        numberArray[i] = Number(numberArray[i]);
+      };
 
+      numberArray = numberArray.sort(function(a,b){return a > b});
+      numberArray = numberArray.join(", ")
+      var display = $('<div>').appendTo($('body'));
+      display.text(numberArray);
     }
 
     function clearQuiz() {
