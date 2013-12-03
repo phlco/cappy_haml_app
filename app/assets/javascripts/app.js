@@ -1,11 +1,22 @@
 $(document).ready(function() {
-  $("button").on("click", function(e) {
+  $("#sort").on("click", function(e) {
     e.preventDefault();
-    numString = $("input[name='numbers']").val()
+    var numString = $("input[name='numbers']").val();
     $("#quiz").remove();
-    numArray = numString.split(", ");
-    numArray.sort(function(a,b) { return a-b});
-    numJoin = numArray.join(", ")
+    var numArray = numString.split(", ");
+    numArray.sort(function(a, b) { return a-b });
+    var numJoin = numArray.join(", ")
     $("body").append(numJoin);
+  });
+  $("#random").on("click", function(e) {
+    e.preventDefault();
+    var numAmount = $("input[name='numbers']").val();
+    $.ajax({
+      type: "get",
+      url: "/numbers/" + numAmount,
+      dataType: "json"
+    }).done(function(response) {
+      $("input[name='numbers']").val(response.numbers);
+    })
   });
 })

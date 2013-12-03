@@ -71,6 +71,18 @@ end
 # In order to incorporate some Ruby and Ajax...
 # Given that you've completed all the above
 # And if you enter a number into the input numbers field
+describe "random ajax numbers", js: true do
+    before(:each) do
+      visit '/quiz'
+      within("#quiz") { fill_in 'numbers', with: "3" }
+      click_button "Random Ajax Numbers"
+    end
+  it "gives back the inputted number of numbers" do
+    response = page.find("input[name='numbers']").value
+    nums_array = response.split(", ")
+    expect(nums_array.length).to be(3)
+  end
+end
 # When you click on "Random Ajax Numbers"
 # Then you should make an ajax call to your server
 # And receive back a random array of numbers
