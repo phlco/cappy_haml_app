@@ -8,14 +8,22 @@ function sort(){
 	return sortedArray
 }
 
-
-$(document).ready(function(){
-
-	$("#sort").on("click", function(){
+function sortNReplace() {
 		var array = sort();
 		$("#result").text(array.join(', '))
 		$(this).remove();
 		$("#numbers").remove();
-	})
+}
+
+
+$(document).ready(function(){
+
+	$("#sort").on("click", sortNReplace)
+	// $("#sort").on("click", function(){
+	// 	var array = sort();
+	// 	$("#result").text(array.join(', '))
+	// 	$(this).remove();
+	// 	$("#numbers").remove();
+	// })
 
 })
