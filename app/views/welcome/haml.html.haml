@@ -18,9 +18,15 @@
       %td moons
       %td stars
 
-%form
-  %label{:for => "fave_cereal"} Fave Cereal
-  %input{:type=>"checkbox"}
-  %input#fave_cereal{:type=>"select"}
+/ %form
+/   %label{:for => "fave_cereal"} Fave Cereal
+/   %input{:type=>"checkbox"}
+/   %input#fave_cereal{:type=>"select"}
+
+= form_tag do
+  = check_box_tag "fave"
+  = label_tag "fave_cereal"
+  = select_tag "fave_cereal"
+
 
 %footer Footer
