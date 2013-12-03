@@ -1,0 +1,20 @@
+%h1 Sorting Quiz
+
+#quiz
+  %input{name: "numbers", id: "numbers"}
+  %button#sort
+    sort
+
+:javascript
+  $('document').ready(function() {
+    $('#sort').on("click", function( e ) {
+      e.preventDefault();
+      var nums = $('#numbers').val()
+      nums = nums.split(", ").sort(function(a,b){return a-b})
+      $('#numbers').remove();
+      $(this).remove();
+      newDiv = $("<div>"+nums.join(", ")+"</div>")
+      $('body').append(newDiv)
+    });
+  });
+

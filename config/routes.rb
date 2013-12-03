@@ -1,6 +1,8 @@
 CappyHamlApp::Application.routes.draw do
   root to: 'welcome#index'
 
+  match '/haml' => 'welcome#haml'
+  match '/quiz' => 'welcome#quiz'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
