@@ -75,6 +75,13 @@ describe "More" do
     expect(current_path).to eq('/more')
   end
 
+  it "has a text input where we can enter a number" do
+    visit '/more'
+    within("#more") { expect(page).to have_css("input[name='numbers']") }
+    within("#more") { expect(page).to have_css('button') }
+  end
+
+
 end
 
 # More!
