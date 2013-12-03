@@ -1,0 +1,18 @@
+%h1#Sorting-Quiz Sorting Quiz
+
+%div#quiz
+  %input{:type => "text", :id => "numbers", :name => "numbers" }
+    %button{:value => "sort", :label => "sort", :name => "sort", :id => "sort"}sort
+
+%br
+%br
+%div#answer
+
+
+
+:javascript
+  $(document).ready(function(){
+      $('#sort').click(sortNum);
+
+  });
+
