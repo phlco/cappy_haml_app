@@ -64,6 +64,19 @@ describe "The Quiz" do
 
   end
 
+  describe "when i click on 'random ajax numbers'", js:true do
+    before(:each) do
+      visit '/quiz'
+      within("#quiz") { fill_in 'numbers', with: "4" }
+      click_button "random-ajax-numbers"
+    end
+
+    it "the numbers input is filled with random numbers" do
+      expect(find_field('numbers').value.split(',').count).to eq(4)
+    end
+
+  end
+
 end
 
 # More!

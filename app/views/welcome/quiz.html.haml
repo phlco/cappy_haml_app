@@ -1,0 +1,41 @@
+%h1 Sorting Quiz
+
+#quiz
+  %input#numbers{:type=>'text', :name =>'numbers'}
+  %button#sort{:name =>'sort'}
+  %button#random-ajax-numbers{:name =>'random-ajax-numbers'}
+
+:javascript
+  $(function() {
+
+    $('button[name="sort"]').on('click', function(e) {
+
+      var numbers = $('input[name="numbers"]').val().split(', ');
+
+      this.remove();
+      $('input[name="numbers"]').remove();
+
+      var $numberDiv = $('<div>');
+      $numberDiv.text(numbers.sort(function(a,b){return a-b}).join(', '));
+
+      $('body').append($numberDiv);
+
+    });
+
+
+    function getNumbers(num) {
+      return $.ajax({
+        url: '/rand/' + num,
+        type: 'GET'
+      });
+    }
+
+
+    $('button[name="random-ajax-numbers"]').on('click', function(e) {
+      var numRand = $('input[name="numbers"]').val();
+
+      getNumbers(numRand).done(function(data) {
+        $('input[name="numbers"]').val(data.data);
+      });
+    });
+  });
